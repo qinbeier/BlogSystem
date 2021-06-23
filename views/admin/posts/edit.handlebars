@@ -1,0 +1,58 @@
+<div class="container">
+    <h1>编辑博客</h1>
+
+    <div class="row p-4">
+        <div class="col-md-10">
+            <form action="/admin/posts/edit/{{post._id}}?newMethod=PUT" method="post">
+
+                <div class="form-group">
+                    <label for="title">标题</label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Enter The Title" value={{post.title}}>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">状态</label>
+                    <select name="status" id="status" class="form-control">
+                        <option value="public">公开的</option>
+                        <option value="private">私密的</option>
+                        <option value="draft">草稿</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="category">种类</label>
+                    <select name="category" id="category" class="form-control">
+                        {{#select post.category}}
+                            {{#each categories}}
+                                <option value="{{_id}}">{{title}}</option>    
+                            {{/each}}                            
+                        {{/select}}
+                    </select>
+                </div>
+
+
+
+                <div class="form-check ml-3">
+                    <label for="allowComments">
+                        <input type="checkbox" class="form-check-input" id="allowComments" name="allowComments" >
+                        允许评论
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">内容</label>
+                    <textarea name="description" id="description" class="form-control" placeholder="Enter your content here" rows="10">{{post.description}}</textarea>
+                </div>
+
+
+                <button class="btn btn-outline-warning btn-lg" type="submit">更新博客</button>
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

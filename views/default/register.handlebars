@@ -1,0 +1,42 @@
+
+<div class="card card-register mx-auto my-5">
+    <div class="card-header">注册新账号</div>
+    <div class="card-body">
+        <form action="/register" method="post">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="exampleInputName">名字</label>
+                        <input name="firstName" class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="exampleInputLastName">姓氏</label>
+                        <input name="lastName" class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">邮箱地址</label>
+                <input name="email" class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="exampleInputPassword1">密码</label>
+                        <input name="password" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password" required >
+                    </div>
+                    <div class="col-md-6">
+                        <label for="exampleConfirmPassword">确认密码</label>
+                        <input name="passwordConfirm" class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">注册</button>
+        </form>
+        <div class="text-center">
+            <a class="d-block small mt-3" href="/login">登录页面</a>
+            <a class="d-block small" href="forgot-password.html">忘记密码？</a>
+            <a class="d-block small" href="/">返回家目录</a>
+        </div>
+    </div>
+</div>

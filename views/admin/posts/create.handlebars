@@ -1,0 +1,62 @@
+<div class="container">
+    <h1>创建新的博客</h1>
+    
+    <div class="row p-4">
+        <div class="col-md-10">
+            <form action="/admin/posts/create" method="post" enctype="multipart/form-data">
+                
+                <div class="form-group">
+                    <label for="title">标题</label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Enter The Title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="file">上传文件</label>
+                    <input type="file" class="form-control" id="file" name="uploadedFile"  accept="image/jpeg, image/jpg, image/png, image/bmp">
+                </div>
+
+                <div class="form-group">
+                    <label for="status">状态</label>
+                    <select name="status" id="status" class="form-control">
+                        <option value="public">公开的</option>
+                        <option value="private">私密的</option>
+                        <option value="draft">草稿</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="category">种类</label>
+                    <select name="category" id="category" class="form-control">
+                        {{#each categories}}
+                            <option value="{{_id}}">{{title}}</option>    
+                        {{/each}}
+                                             
+                    </select>
+                </div>
+                
+                
+                
+                <div class="form-check ml-3">
+                    <label for="allowComments">
+                        <input type="checkbox" class="form-check-input" id="allowComments" name="allowComments">
+                        允许评论
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">内容</label>
+                    <textarea name="description" id="description" class="form-control" placeholder="Enter your content here" rows="10"></textarea>
+                </div>
+                
+                
+                <button class="btn btn-outline-success btn-lg" type="submit">创建博客</button>
+                
+                
+            </form>
+        </div>
+    </div>
+    
+    
+    
+</div>

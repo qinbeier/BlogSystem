@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="alert alert-secondary text-center">
+        <h1>所有博客</h1>    
+    </div>
+        
+    <table class="table table-bordered">
+        <thead class="bg-dark text-center">
+        <tr class="text-white">          
+            <th>标题</th>
+            <th>描述信息</th>
+            <th>状态</th>
+            <th>允许评论</th>
+            <th>种类</th>
+            <th>动作</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        {{#each posts}}
+            <tr>               
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>{{status}}</td>
+                <td>{{allowComments}}</td>
+                <td>{{category.title}}</td>
+                <td class="d-flex">
+                    <a href="/admin/posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">编辑博客</a>
+
+                    <form action="/admin/posts/delete/{{id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger" type="submit">删除博客</button>
+                    </form>
+                    
+                    
+                </td>
+            </tr>    
+        {{/each}}
+        
+        </tbody>
+    </table>
+    
+    
+</div>
